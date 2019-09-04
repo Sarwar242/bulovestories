@@ -1,0 +1,59 @@
+.story{
+border: 1px solid #ccc;
+    border-left-color: rgb(204, 204, 204);
+    border-left-style: solid;
+    border-left-width: 1px;
+border-left: 4px solid #546e7a;
+border-radius: 3px;
+padding-left: 6px;
+}
+.imagemain {
+        border-radius: 32px;
+    height: 65px;
+    width: 65px;
+    margin-top: 0px;
+    border: 1px solid #bcbcbc;
+    padding: 2px;
+    float: left;
+}
+
+.image{    margin-top: 11px;
+    margin-left: 5px;
+}
+.img{
+	
+
+}
+.para {
+    font-size: 20px;
+    padding-right: 15px;
+    text-align: justify;
+    padding-bottom: 10px;
+}
+.paraa a{
+	text-decoration: none;
+	color: black;
+}
+.read{
+	float: right;
+}
+
+.name {
+    margin-left: 83px;
+}
+.following {
+    margin-top: 0px;
+    margin-left: 85px;
+}
+.contents{
+	margin-left: 13px;
+}
+.slidersection {
+    background: #f0f0f0;
+    padding-top: 10px;
+    border-radius: 5px;
+    border-left: 4px solid #546e7a;
+    border-right: 4px solid #546e7a;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+}
