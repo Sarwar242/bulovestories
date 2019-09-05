@@ -10,7 +10,17 @@
       <link rel="icon" href="{{asset('images/bulovestorieslogo.png')}}">
       <link rel="stylesheet" type="text/css" href="{{asset('css/footer.css')}}">
       <link rel="stylesheet" type="text/css" href="{{asset('css/index.css')}}">
+      <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
 
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script src="{{asset('js/shareform.js')}}"></script>
 
 
 
@@ -87,9 +97,30 @@ $(window).load(function() {
 
           <ul class="nav navbar-nav navbar-right">
           	@if(Auth::Check())
+              <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }} <span class="caret"></span>
+                 </a>
+                <ul class="dropdown-menu dropdown-menu-right"
+                aria-labelledby="navbarDropdown">
+
+                    <li><a class="dropdown-item" href="{{ route('dashboard') }}" >
+                     Profile
+                 </a></li>
+                    <li><a class="dropdown-item" href="{{ route('logout') }}"
+                          onclick="event.preventDefault();
+                                       document.getElementById('logout-form').submit();">
+                           {{ __('Logout') }}
+                      </a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                          @csrf
+                     </form></li>
+                </ul>
+
+            </li>
           	@else
-          	 <li><a  href="">Login</a></li>
-            <li><a  href="">Register</a></li>
+          	 <li><a  href="{{route('login')}}">Login</a></li>
+            <li><a  href="{{route('register')}}">Register</a></li>
           	@endif
 
 
@@ -107,7 +138,7 @@ $(window).load(function() {
 
 
 
-    <div class="container">
+    <div class="container pd-2">
 
 @yield('content')
 
