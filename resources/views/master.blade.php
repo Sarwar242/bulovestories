@@ -149,11 +149,11 @@ $(window).load(function() {
 <footer>
 
   <!-- Copyright -->
-  <center>
+ 
   <div class="footerpp">
     <p>© 2019 Copyright : BULoveStories . Developed by Pranta & Sarwar. </p>
   </div>
-  <center>
+ 
 
 </footer>
 

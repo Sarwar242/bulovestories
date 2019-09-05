@@ -33,8 +33,14 @@
 			var slider = $(this);
 			slider.data('nivo:vars', vars);
 			slider.css('position','relative');
-			slider.width('1px');
-			slider.height('1px');
+			slider.css('max-width','900px');
+			slider.css('border-radius','10px');
+			slider.css('size','cover');
+			slider.css('box-shadow','7px 8px 35px -11px rgba(0,0,0,0.75)');
+			slider.css('background-position','center');
+			slider.css('background-repeat','no-repeat');
+			
+			slider.height('300px');
 			slider.addClass('nivoSlider');
 			
 			//Find our slider children
@@ -47,18 +53,7 @@
 					}
 					child = child.find('img:first');
 				}
-				//Don't ask
-				var childWidth = child.width();
-				if(childWidth == 0) childWidth = child.attr('width');
-				var childHeight = child.height();
-				if(childHeight == 0) childHeight = child.attr('height');
-				//Resize the slider
-				if(childWidth > slider.width()){
-					slider.width(childWidth);
-				}
-				if(childHeight > slider.height()){
-					slider.height(childHeight);
-				}
+				
 				child.css('display','none');
 				vars.totalSlides++;
 			});

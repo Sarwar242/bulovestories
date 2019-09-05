@@ -33,10 +33,11 @@ notactive
         <h2>Campus Life</h2>
         <p>University of Barishal</p>
         <div id="slider">
-            <a href="#"><img src="{{asset('images/slideshow/01.jpg')}}" alt="nature 1" title="This is a Title" /></a>
-            <a href="#"><img src="{{asset('images/slideshow/02.jpg')}}" alt="nature 2" title="This is a Title" /></a>
-            <a href="#"><img src="{{asset('images/slideshow/03.jpg')}}" alt="nature 3" title="This is a Title" /></a>
-            <a href="#"><img src="{{asset('images/slideshow/04.jpg')}}" alt="nature 4" title="This is a Title" /></a>
+            <a href="#"><img  src="{{asset('images/slideshow/01.jpg')}}" alt="nature 1" title="ক্যাম্পাস" /></a>
+            <a href="#"><img  src="{{asset('images/slideshow/02.jpg')}}" alt="nature 2" title="ক্যাম্পাসে যখন বর্ষাকাল" /></a>
+            <a href="#"><img  src="{{asset('images/slideshow/03.jpg')}}" alt="nature 3" title="শরতের পরিবেশে" /></a>
+            <a href="#"><img  src="{{asset('images/slideshow/04.jpg')}}" alt="nature 4" title="মুক্তমঞ্চ থেকে" /></a>
+
         </div>
     </div>
 </center>
