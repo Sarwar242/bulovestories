@@ -28,6 +28,9 @@ notactive
 
 
 
+
+
+
 <center>
     <div class="slidersection">
         <h2>Campus Life</h2>

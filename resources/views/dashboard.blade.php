@@ -35,7 +35,7 @@ notactive
         <img class="img-responsive" src="{{asset('images/cover.jpg')}}">
     </div>
     <div class="profilename">
-        <h2>Pranta Kumar Biswas</h2>
+        <h2>{{ Auth::user()->name }}</h2>
 
     </div>
     <div class="dashfollow">

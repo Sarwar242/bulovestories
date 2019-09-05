@@ -18,10 +18,11 @@
   border-bottom: #ffffff;
 }
 .logopng {
-  height: 59px;
-width: 67px;
-padding-top: 2px;
-padding-left: 4px;
+    height: 59px;
+    width: 92px;
+    padding-top: 3px;
+    padding-left: 5px;
+    margin-top: 2px;
 }
 .navbar-brand {
     float: left;

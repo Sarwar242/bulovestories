@@ -13,6 +13,7 @@
       <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
 
 
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -65,6 +66,8 @@ $(window).load(function() {
 
   </head>
   <body>
+
+
 
 
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -138,7 +141,10 @@ $(window).load(function() {
 
 
 
-    <div class="container pd-2">
+    <div class="container">
+
+
+
 
 @yield('content')
 
