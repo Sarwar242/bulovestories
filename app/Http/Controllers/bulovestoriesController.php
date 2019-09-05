@@ -2,32 +2,48 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Story;
+use Auth;
+use Illuminate\Support\Facades\DB;
 
 class bulovestoriesController extends Controller
 {
-  public function index(){
-   $story = Story::all();
+    public function index()
+    {
+        $story = Story::orderBY('updated_at', 'desc')->get();
+
         return view('index')->with('stories', $story);
-  }
-  public function topstories(){
-    return view('topstories');
-  }
-  public function notifications(){
-    return view('notifications');
-  }
-  public function sharestory(){
-    return view('sharestory');
-  }
-  public function dashboard(){
-    return view('dashboard');
-  }
-  public function faq(){
-    return view('faq');
-  }
-  public function about(){
-    return view('about');
-  }
+    }
+    public function topstories()
+    {
+        return view('topstories');
+    }
+    public function notifications()
+    {
+        return view('notifications');
+    }
+    public function sharestory()
+    {
+        return view('sharestory');
+    }
+    public function dashboard()
+    {
+        $id = auth()->user()->id;
+
+        /*  $id = Auth::user()->id; */
+
+        $story = DB::table('stories')->where('user_id', $id)
+            ->orderBY('updated_at', 'desc')->get();
+
+        return view('dashboard')->with('stories', $story);
+    }
+    public function faq()
+    {
+        return view('faq');
+    }
+    public function about()
+    {
+        return view('about');
+    }
 
 }
