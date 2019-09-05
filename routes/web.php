@@ -15,9 +15,10 @@ Route::get('/topstories', 'bulovestoriesController@topstories')->name('topstorie
 
 Route::get('/faq', 'bulovestoriesController@faq')->name('faq');
 Route::get('/about', 'bulovestoriesController@about')->name('about');
+Route::get('/confessions', 'bulovestoriesController@confessions')->name('confessions');
 
 Route::group(['middleware' => 'AuthenticateMiddleware'], function () {
-    Route::get('/notifications', 'bulovestoriesController@notifications')->name('notifications');
+    
     Route::get('/sharestory', 'bulovestoriesController@sharestory')->name('sharestory');
     Route::get('/dashboard', 'bulovestoriesController@dashboard')->name('dashboard');
 });

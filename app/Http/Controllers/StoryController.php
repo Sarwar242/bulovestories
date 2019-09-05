@@ -21,10 +21,12 @@ class StoryController extends Controller
         $Story->save();
         return redirect()->route('index');
     }
+    
 
     public function ShowStory()
     {
         $story = Story::all();
         return view('dashboard')->with('stories', $story);
     }
+   
 }

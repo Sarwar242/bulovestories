@@ -18,9 +18,9 @@ class bulovestoriesController extends Controller
     {
         return view('topstories');
     }
-    public function notifications()
+    public function confessions()
     {
-        return view('notifications');
+        return view('confessions');
     }
     public function sharestory()
     {

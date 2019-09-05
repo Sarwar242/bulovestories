@@ -8,6 +8,9 @@
     padding: 2px;
     
 }
+.status{
+    color:gray;
+}
 .stories {
     margin-bottom: 20px;
     background: #f9f9f9;

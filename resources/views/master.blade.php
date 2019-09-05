@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>@yield('title', 'BULoveStories')</title>
+    <title>@yield('title', 'CampusLife')</title>
 
       <link rel="stylesheet" href="{{asset('slider/css/nivo-slider.css')}}" type="text/css" media="screen" />
     	<link rel="stylesheet" type="text/css" href="{{asset('bootstrap/css/bootstrap.min.css')}}">
@@ -87,7 +87,7 @@ $(window).load(function() {
           <ul class="nav navbar-nav nav-tabs">
             <li class=" @yield('act','active') "><a href="{{route('index')}}">News Feed <span class="sr-only">(current)</span></a></li>
             <li class=" @yield('act2','active') "><a  href="{{route('topstories')}}">Top Stories</a></li>
-            <li role="presentation" class=" @yield('act3','active') "><a  href="{{route('notifications')}}">Notifications<span class="badge">3</span></a></li>
+            <li role="presentation" class=" @yield('act3','active')"><a  href="{{route('confessions')}}">Confessions</a></li>
             <li  class=" @yield('act4','active') "><a  href="{{route('sharestory')}}">Share Story</a></li>
             <li class=" @yield('act5','active') "><a  href="{{route('dashboard')}}">Dashboard</a></li>
             <li class=" @yield('act6','active') "><a  href="{{route('faq')}}">FAQ</a></li>

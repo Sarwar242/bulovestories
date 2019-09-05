@@ -57,9 +57,10 @@ notactive
 
 
 
-@foreach ($stories as $story)
+
 
 <div class="posts clear">
+	@foreach ($stories as $story)
     <div class="stories">
         <div class="profilesection">
             <div class="image clear">
@@ -67,10 +68,10 @@ notactive
             </div>
             <div class="userpf clear">
                 <div class="name">
-                    <h2><a href="">{{ Auth::user()->name }}</a></h2>
+                    <h2>{{ Auth::user()->name }}</h2>
                 </div>
                 <div class="following">
-                    <p> <a href="#">Edit This Story</a></p>
+                    <p> <a href="#">Edit This Story</a><span class="status">&nbsp;&nbsp; Approved</a></span></p>
                 </div>
             </div>
         </div>
@@ -80,16 +81,21 @@ notactive
 
 
             <div class="para">
-                <p class="paraa"> <a href="#"> {!! $story->story !!}</a></p>
+                <p class="paraa"> <a href="#"><?php 
+                $value = $story->story;
+                $value = Str::limit($value, $limit = 300, $end = '......');
+                echo $value;
+
+                 ?></a></p>
                 <div class="read"><a class="active" href="#">Read More<span
                             class="glyphicon glyphicon-chevron-right"></span></a></div>
                 <br>
             </div>
         </div>
     </div>
+    @endforeach
 </div>
 
-@endforeach
 
 
 
@@ -97,9 +103,23 @@ notactive
 
 
 <div class="sidebar clear">
+
+	<div class="sidebar1">
+        <div class="sidebartitle">
+            <h2><a href="">Quick Links</a></h2>
+        </div>
+        <div class="storyname">
+            <h3><a href="{{route('sharestory')}}">Share your story</a> &nbsp; <span class="glyphicon glyphicon-pencil"></span></h3>
+            <h3><a href="{{route('confessions')}}">Confessions</a> &nbsp; <span class="glyphicon glyphicon-heart-empty"></span></h3>
+            <h3><a href="{{route('dashboard')}}">Dashboard</a> &nbsp; <span class="glyphicon glyphicon-user"></span></h3>
+        </div>
+
+    </div>
+
+
     <div class="sidebar1">
         <div class="sidebartitle">
-            <h2><a href="">Top Stories</a></h2>
+            <h2><a href="{{route('topstories')}}">Top Stories</a></h2>
         </div>
         <div class="storyname">
             <h3><a href=""> মোহোনা</a></h3>
@@ -109,17 +129,7 @@ notactive
         </div>
     </div>
 
-    <div class="sidebar1">
-        <div class="sidebartitle">
-            <h2><a href="">Quick Links</a></h2>
-        </div>
-        <div class="storyname">
-            <h3><a href="">Share your story</a> &nbsp; <span class="glyphicon glyphicon-pencil"></span></h3>
-            <h3><a href="">Confessions</a> &nbsp; <span class="glyphicon glyphicon-heart-empty"></span></h3>
-            <h3><a href="">Dashboard</a> &nbsp; <span class="glyphicon glyphicon-user"></span></h3>
-        </div>
-
-    </div>
+    
 
 </div>
 
