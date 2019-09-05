@@ -157,7 +157,7 @@ $(window).load(function() {
   <!-- Copyright -->
  
   <div class="footerpp">
-    <p>© 2019 Copyright : BULoveStories . Developed by Pranta & Sarwar. </p>
+    <p>© 2019 Copyright : BUCampusLife. Developed by Pranta & Sarwar. </p>
   </div>
  
 
