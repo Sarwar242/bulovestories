@@ -33,7 +33,7 @@ class bulovestoriesController extends Controller
         /*  $id = Auth::user()->id; */
 
         $story = DB::table('stories')->where('user_id', $id)
-            ->orderBY('updated_at', 'desc')->get();
+            ->orderBY('created_at', 'desc')->get();
 
         return view('dashboard')->with('stories', $story);
     }
