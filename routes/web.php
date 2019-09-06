@@ -18,7 +18,7 @@ Route::get('/about', 'bulovestoriesController@about')->name('about');
 Route::get('/confessions', 'bulovestoriesController@confessions')->name('confessions');
 
 Route::group(['middleware' => 'AuthenticateMiddleware'], function () {
-    
+
     Route::get('/sharestory', 'bulovestoriesController@sharestory')->name('sharestory');
     Route::get('/dashboard', 'bulovestoriesController@dashboard')->name('dashboard');
 });
@@ -30,6 +30,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* Functionalities */
 
 Route::post('/sharestory/{id}', 'StoryController@store')->name('store');
+Route::get('/edit/{id}', 'StoryController@editstory')->name('editstory');
+Route::post('/updatestory/{id}', 'StoryController@updatestory')->name('updatestory');
 
 /*Admin */
 Route::get('/admin/home', 'adminController@homeadmin')->name('homeadmin');

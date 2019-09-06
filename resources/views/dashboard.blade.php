@@ -53,14 +53,8 @@ notactive
 </div>
 
 
-
-
-
-
-
-
 <div class="posts clear">
-	@foreach ($stories as $story)
+    @foreach ($stories as $story)
     <div class="stories">
         <div class="profilesection">
             <div class="image clear">
@@ -71,7 +65,7 @@ notactive
                     <h2>{{ Auth::user()->name }}</h2>
                 </div>
                 <div class="following">
-                    <p> <a href="#">Edit This Story</a><span class="status">&nbsp;&nbsp; Approved</a></span></p>
+                    <p> <a href="{{route('editstory',$story->id)}}">Edit This Story</a><span class="status">&nbsp;&nbsp; Approved</a></span></p>
                 </div>
             </div>
         </div>
@@ -81,12 +75,12 @@ notactive
 
 
             <div class="para">
-                <p class="paraa"> <a href="#"><?php 
-                $value = $story->story;
-                $value = Str::limit($value, $limit = 300, $end = '......');
-                echo $value;
+                <p class="paraa"> <a href="#"><?php
+$value = $story->story;
+$value = Str::limit($value, $limit = 300, $end = '......');
+echo $value;
 
-                 ?></a></p>
+?></a></p>
                 <div class="read"><a class="active" href="#">Read More<span
                             class="glyphicon glyphicon-chevron-right"></span></a></div>
                 <br>
@@ -98,20 +92,19 @@ notactive
 
 
 
-
-
-
-
 <div class="sidebar clear">
 
-	<div class="sidebar1">
+    <div class="sidebar1">
         <div class="sidebartitle">
             <h2><a href="">Quick Links</a></h2>
         </div>
         <div class="storyname">
-            <h3><a href="{{route('sharestory')}}">Share your story</a> &nbsp; <span class="glyphicon glyphicon-pencil"></span></h3>
-            <h3><a href="{{route('confessions')}}">Confessions</a> &nbsp; <span class="glyphicon glyphicon-heart-empty"></span></h3>
-            <h3><a href="{{route('dashboard')}}">Dashboard</a> &nbsp; <span class="glyphicon glyphicon-user"></span></h3>
+            <h3><a href="{{route('sharestory')}}">Share your story</a> &nbsp; <span
+                    class="glyphicon glyphicon-pencil"></span></h3>
+            <h3><a href="{{route('confessions')}}">Confessions</a> &nbsp; <span
+                    class="glyphicon glyphicon-heart-empty"></span></h3>
+            <h3><a href="{{route('dashboard')}}">Dashboard</a> &nbsp; <span class="glyphicon glyphicon-user"></span>
+            </h3>
         </div>
 
     </div>
@@ -129,17 +122,9 @@ notactive
         </div>
     </div>
 
-    
+
 
 </div>
-
-
-
-
-
-
-
-
 
 
 
