@@ -83,12 +83,9 @@
 	margin-left: 13px;
 }
 .slidersection {
-    background: #f0f0f0;
-    padding-top: 10px;
+    background: #f2f0f0;
+    padding-top: 1px;
     border-radius: 5px;
-    border-left: 4px solid #546e7a;
-    border-right: 4px solid #546e7a;
-    padding-bottom: 15px;
     margin-bottom: 10px;
 }
 .clear{

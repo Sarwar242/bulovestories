@@ -35,13 +35,53 @@ notactive
     <div class="slidersection">
         <h2>Campus Life</h2>
         <p>University of Barishal</p>
-        <div id="slider">
-            <a href="#"><img  src="{{asset('images/slideshow/01.jpg')}}" alt="nature 1" title="ক্যাম্পাস" /></a>
-            <a href="#"><img  src="{{asset('images/slideshow/02.jpg')}}" alt="nature 2" title="ক্যাম্পাসে যখন বর্ষাকাল" /></a>
-            <a href="#"><img  src="{{asset('images/slideshow/03.jpg')}}" alt="nature 3" title="শরতের পরিবেশে" /></a>
-            <a href="#"><img  src="{{asset('images/slideshow/04.jpg')}}" alt="nature 4" title="মুক্তমঞ্চ থেকে" /></a>
+        <link rel="stylesheet" href="{{asset('ism/css/my-slider.css')}}"/>
+<script src="{{asset('ism/js/ism-2.2.min.js')}}"></script>
 
-        </div>
+<div class="ism-slider" data-transition_type="fade" data-play_type="loop" data-interval="3000" data-image_fx="zoomrotate" data-radio_type="thumbnail" id="my-slider">
+  <ol>
+    <li>
+      <img src="ism/image/slides/_u/1567748352402_955202.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>বরিশাল বিশ্ববিদ্যালয়</div>
+    </li>
+    <li>
+      <img src="ism/image/slides/_u/1567748355141_540141.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>বর্ষায় ক্যাম্পাস</div>
+    </li>
+    <li>
+      <img src="ism/image/slides/_u/1567748354670_766495.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>ক্যাম্পাস মুক্তমঞ্চ</div>
+    </li>
+    <li>
+      <img src="ism/image/slides/_u/1567748354311_570794.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>ক্যাম্পাস প্লে গ্রাউন্ড</div>
+    </li>
+    <li>
+      <img src="ism/image/slides/_u/1567748353894_968925.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>একাত্নতার দেয়াল</div>
+    </li>
+    <li>
+      <img src="ism/image/slides/_u/1567748354689_313519.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>শিক্ষক ডরমেনটরি</div>
+    </li>
+    <li>
+      <img src="ism/image/slides/_u/1567748352917_95222.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>লাল বাস</div>
+    </li>
+    <li>
+      <img src="ism/image/slides/_u/1567748353718_947784.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>উপাচার্যের কার্যালয়</div>
+    </li>
+    <li>
+      <img src="ism/image/slides/_u/1567748355130_59848.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>ক্যাম্পাস রোড</div>
+    </li>
+    <li>
+      <img src="ism/image/slides/_u/1567748356036_825732.jpg">
+      <div class="ism-caption ism-caption-1" data-delay='200'>নববর্ষ ১৪২৬</div>
+    </li>
+  </ol>
+</div>
     </div>
 </center>
 

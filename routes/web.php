@@ -30,3 +30,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 /* Functionalities */
 
 Route::post('/sharestory/{id}', 'StoryController@store')->name('store');
+
+/*Admin */
+Route::get('/admin/home', 'adminController@homeadmin')->name('homeadmin');
+Route::get('/admin/confessions', 'adminController@confessionpage')->name('confessionpage');
+Route::get('/admin/admins', 'adminController@admins')->name('admins');
+Route::get('/admin/members', 'adminController@members')->name('members');
