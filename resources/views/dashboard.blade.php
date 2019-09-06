@@ -1,5 +1,7 @@
 @extends('master')
-
+@section('title')
+Dashboard | Campus Life
+@endsection
 @section('act')
 notactive
 @endsection
@@ -43,9 +45,7 @@ notactive
 
     </div>
     <div class="editprofile">
-        <p><a class="btndashboard btn-primary" href="">Edit Profile</a></p>
-
-
+        <p><a class="btndashboard btn-primary" href="{{route('editprofile',Auth::user()->id)}}">Edit Profile</a></p>
         </form>
 
     </div>
@@ -65,7 +65,8 @@ notactive
                     <h2>{{ Auth::user()->name }}</h2>
                 </div>
                 <div class="following">
-                    <p> <a href="{{route('editstory',$story->id)}}">Edit This Story</a><span class="status">&nbsp;&nbsp; Approved</a></span></p>
+                    <p> <a href="{{route('editstory',$story->id)}}">Edit This Story</a><span class="status">&nbsp;&nbsp;
+                            Approved</a></span></p>
                 </div>
             </div>
         </div>
