@@ -33,9 +33,12 @@ Route::get('/editstory/{id}', 'StoryController@editstory')->name('editstory');
 Route::post('/updatestory/{id}', 'StoryController@updatestory')->name('updatestory');
 Route::get('/editprofile/{id}', 'UserController@editprofile')->name('editprofile');
 Route::post('/updateprofile/{id}', 'UserController@update')->name('updateprofile');
+Route::post('/deletestory/{id}', 'StoryController@delete')->name('deletestory');
 
 /*Admin */
-Route::get('/admin/home', 'adminController@homeadmin')->name('homeadmin');
-Route::get('/admin/confessions', 'adminController@confessionpage')->name('confessionpage');
-Route::get('/admin/admins', 'adminController@admins')->name('admins');
-Route::get('/admin/members', 'adminController@members')->name('members');
+Route::group(['prefix' => '/admin'], function () {
+    Route::get('/', 'adminController@homeadmin')->name('homeadmin');
+    Route::get('/confessions', 'adminController@confessionpage')->name('confessionpage');
+    Route::get('/admins', 'adminController@admins')->name('admins');
+    Route::get('/members', 'adminController@members')->name('members');
+});

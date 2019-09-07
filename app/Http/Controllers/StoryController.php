@@ -32,6 +32,7 @@ class StoryController extends Controller
         $story = Story::find($id);
         return view('editstory')->with('story', $story);
     }
+
     public function updatestory(Request $request, $id)
     {
         $this->validate($request, [
@@ -43,6 +44,13 @@ class StoryController extends Controller
         $Story->title = $request->title;
         $Story->story = $request->story;
         $Story->save();
+        return redirect()->route('dashboard');
+
+    }
+    public function delete($id)
+    {
+        $story = Story::find($id);
+        $story->delete();
         return redirect()->route('dashboard');
 
     }

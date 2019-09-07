@@ -65,7 +65,12 @@ notactive
                     <h2>{{ Auth::user()->name }}</h2>
                 </div>
                 <div class="following">
-                    <p> <a href="{{route('editstory',$story->id)}}">Edit This Story</a><span class="status">&nbsp;&nbsp;
+                    <p>
+                        <a class="btn" href="{{route('editstory',$story->id)}}">
+                            Edit</a>
+
+                        <a class="btn" onclick="return confirm('Are you sure?')" href="{{route('deletestory',$story->id)}}">
+                            Delete</a><span class="status">&nbsp;&nbsp;
                             Approved</a></span></p>
                 </div>
             </div>
