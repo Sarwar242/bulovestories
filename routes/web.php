@@ -25,6 +25,7 @@ Route::group(['middleware' => 'AuthenticateMiddleware'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/token/{token}', 'auth\VerificationController2@verify')->name('user.verification');
 
 /* Functionalities */
 
