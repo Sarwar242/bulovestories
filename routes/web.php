@@ -36,10 +36,21 @@ Route::get('/editprofile/{id}', 'UserController@editprofile')->name('editprofile
 Route::post('/updateprofile/{id}', 'UserController@update')->name('updateprofile');
 Route::post('/deletestory/{id}', 'StoryController@delete')->name('deletestory');
 
-/*Admin */
+/*Admin Routes*/
+
 Route::group(['prefix' => '/admin'], function () {
-    Route::get('/', 'adminController@homeadmin')->name('homeadmin');
-    Route::get('/confessions', 'adminController@confessionpage')->name('confessionpage');
-    Route::get('/admins', 'adminController@admins')->name('admins');
-    Route::get('/members', 'adminController@members')->name('members');
+    Route::get('/', 'Backend\AdminsController@homeadmin')->name('homeadmin');
+    Route::get('/confessions', 'Backend\AdminsController@confessionpage')->name('confessionpage');
+    Route::get('/admins', 'Backend\AdminsController@admins')->name('admins');
+    Route::get('/members', 'Backend\AdminsController@members')->name('members');
+
+    // Admin Login
+    Route::get('/login', 'Auth\Admin\LoginController@showLoginForm')
+        ->name('admin.login');
+    Route::post('/login/submit', 'Auth\Admin\LoginController@login')
+        ->name('admin.login.submit');
+    // Admin Logout
+
+    Route::post('/logout', 'Auth\Admin\LoginController@logout')
+        ->name('admin.logout');
 });

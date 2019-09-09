@@ -1,17 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Story;
-use Illuminate\Http\Request;
+namespace App\Http\Controllers\Backend;
 
-class adminController extends Controller
+use App\Http\Controllers\Controller;
+use App\Models\Story;
+
+class AdminsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
     public function homeadmin()
     {
-    	$story = Story::orderBY('updated_at', 'desc')->get();
-
+        $story = Story::orderBY('updated_at', 'desc')->get();
         return view('admin/homeadmin')->with('stories', $story);
-        
+
     }
     public function confessionpage()
     {

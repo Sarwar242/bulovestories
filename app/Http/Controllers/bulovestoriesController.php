@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Story;
+use App\Models\Story;
 use Auth;
 use Illuminate\Support\Facades\DB;
 

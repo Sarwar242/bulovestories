@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Models\Admin;
 use App\Notifications\VerifyRegistration;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;

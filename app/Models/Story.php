@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Story extends Model
 {
-   protected $fillable = [
+    protected $fillable = [
         'title', 'story',
     ];
 

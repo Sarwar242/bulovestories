@@ -79,12 +79,10 @@
                 </div>
             </div>
         </nav>
-        <div>@include ('layouts.messages')</div>
-
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+
 </body>
 
 </html>
