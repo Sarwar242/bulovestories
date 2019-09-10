@@ -23,6 +23,7 @@ class CreateAdminsTable extends Migration
             $table->string('type')
                 ->default('Super Admin')
                 ->comment('Admin|Super Admin');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

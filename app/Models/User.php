@@ -39,6 +39,6 @@ class User extends Authenticatable
 
     public function story()
     {
-        return $this->hasMany(Story::class);
+        return $this->hasMany(Models\Story::class);
     }
 }

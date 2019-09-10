@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Notifications\AdminPasswordResetNotification;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -15,7 +16,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'phone_no', 'password', 'type', 'avatar',
+        'name', 'email', 'phone_no', 'password', 'type', 'avatar', 'remember_token',
     ];
 
     /**
@@ -39,5 +40,9 @@ class Admin extends Authenticatable
     public function story()
     {
         return $this->hasMany(Models\Story::class);
+    }
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new AdminPasswordResetNotification($token));
     }
 }
