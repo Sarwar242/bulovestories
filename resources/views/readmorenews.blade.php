@@ -52,7 +52,9 @@ notactive
         </div>
 
         <div class="contents">
-            <h2><a href="">Title : {!! $story->title !!}</a><span>&nbsp;&nbsp;<button class=" btnt btn-primary glyphicon glyphicon-heart-empty"></button></span></h2>
+            <h2><a href="">Title : {!! $story->title !!}</a><span>&nbsp;&nbsp;
+
+                    <button class=" btnt btn-primary glyphicon glyphicon-heart-empty"></button></span></h2>
             <div class="para">
                 <p class="paraa"> <a href="#"> <?php
 $value = $story->story;
@@ -60,7 +62,8 @@ $value = $story->story;
 echo $value;
 
 ?></a></p>
-                <div class="read"><a class="active" href="{{ route('index') }}"><span class="glyphicon glyphicon-chevron-left"></span> Back To Newsfeed</a></div>
+                <div class="read"><a class="active" href="{{ route('index') }}"><span
+                            class="glyphicon glyphicon-chevron-left"></span> Back To Newsfeed</a></div>
                 <br>
             </div>
         </div>
@@ -102,6 +105,7 @@ echo $value;
 
 
 </div>
+
 
 
 @endsection
