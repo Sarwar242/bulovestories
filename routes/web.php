@@ -30,6 +30,8 @@ Route::get('/token/{token}', 'auth\VerificationController2@verify')->name('user.
 /* Functionalities */
 
 Route::post('/sharestory/{id}', 'StoryController@store')->name('store');
+Route::get('/readmore/{id}', 'StoryController@readmore')->name('readmore');
+Route::get('/newsfeed/{id}', 'StoryController@newsfeed')->name('newsfeed');
 Route::get('/editstory/{id}', 'StoryController@editstory')->name('editstory');
 Route::post('/updatestory/{id}', 'StoryController@updatestory')->name('updatestory');
 Route::get('/editprofile/{id}', 'UserController@editprofile')->name('editprofile');

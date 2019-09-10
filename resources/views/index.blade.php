@@ -108,7 +108,7 @@ notactive
         </div>
 
         <div class="contents">
-            <h2><a href=""> {!! $story->title !!}</a></h2>
+            <h2><a href="{{route('readmore',$story->id)}}"> {!! $story->title !!}</a><span style="font-size: 16px;color:grey;">&nbsp;&nbsp;100 People Love this story</span></h2>
             <div class="para">
                 <p class="paraa"> <a href="#"> <?php
 $value = $story->story;
@@ -116,7 +116,7 @@ $value = Str::limit($value, $limit = 300, $end = '......');
 echo $value;
 
 ?></a></p>
-                <div class="read"><a class="active" href="#">Read More
+                <div class="read"><a class="active" href="{{route('newsfeed',$story->id)}}">Read More
                         <span class="glyphicon glyphicon-chevron-right"></span></a></div>
                 <br>
             </div>

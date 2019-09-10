@@ -17,15 +17,21 @@ class StoryController extends Controller
         $Story = new Story;
         $Story->user_id = $id;
         $Story->title = $request->title;
+        $Story->rating = 0;
         $Story->story = $request->story;
         $Story->save();
         return redirect()->route('index');
     }
 
-    public function ShowStory()
+    public function readmore($id)
     {
-        $story = Story::all();
-        return view('dashboard')->with('stories', $story);
+        $story = Story::find($id);
+        return view('readmore')->with('story', $story);
+    }
+    public function newsfeed($id)
+    {
+        $story = Story::find($id);
+        return view('readmorenews')->with('story', $story);
     }
     public function editstory($id)
     {
@@ -54,5 +60,6 @@ class StoryController extends Controller
         return redirect()->route('dashboard');
 
     }
+
 
 }
