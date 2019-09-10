@@ -1,7 +1,5 @@
 @extends('master')
-@section('title')
-Dashboard | Campus Life
-@endsection
+
 @section('act')
 notactive
 @endsection
@@ -15,7 +13,7 @@ notactive
 notactive
 @endsection
 @section('act5')
-active
+notactive
 @endsection
 @section('act6')
 notactive
@@ -26,35 +24,16 @@ notactive
 
 
 @section('content')
-<br><br>
-<div class="dashboard">
+<br><br><br><br>
 
-<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
-    <div class="cover">
-        <img class="img-responsive" src="{{asset('images/cover.jpg')}}">
-    </div>
-    <div class="profilepic">
-        <img class="img-responsive" src="{{asset('images/cover.jpg')}}">
-    </div>
-    <div class="profilename">
-        <h2>{{ Auth::user()->name }}</h2>
 
-    </div>
-    <div class="dashfollow">
-        <p>Followers <span class="badge"> 300 </span>&nbsp; </p>
 
-    </div>
-    <div class="editprofile">
-        <p><a class="btndashboard btn-primary" href="{{route('editprofile',Auth::user()->id)}}">Edit Profile</a></p>
-        </form>
 
-    </div>
 
-</div>
 
 
 <div class="posts clear">
-    @foreach ($stories as $story)
+
     <div class="stories">
         <div class="profilesection">
             <div class="image clear">
@@ -62,41 +41,34 @@ notactive
             </div>
             <div class="userpf clear">
                 <div class="name">
-                    <h2>{{ Auth::user()->name }}</h2>
+                    <h2><a href="">{{ $story->user->name }}</a></h2>
                 </div>
                 <div class="following">
-                    <p>
-                        <a class="btn-primary btndashboard" href="{{route('editstory',$story->id)}}">
-                            Edit</a>
-
-                        <a class="btn-danger btndashboard" onclick="return confirm('Are you sure?')" href="{{route('deletestory',$story->id)}}">
-                            Delete</a><span class="status">&nbsp;&nbsp;
-                            Approved</a></span></p>
+                    <p>Followers <span class="badge"> 300 </span>&nbsp; <span>
+                            <a href="#">+Follow</a></span></p>
                 </div>
             </div>
+
         </div>
 
         <div class="contents">
-            <h2><a href=""> {!! $story->title !!}</a></h2>
-
-
+            <h2><a href="">Title : {!! $story->title !!}</a><span style="font-size: 16px;color:grey;">&nbsp;&nbsp;100 People Love this story</span></h2>
             <div class="para">
-                <p class="paraa"> <a href="#"><?php
+                <p class="paraa"> <a href="#"> <?php
 $value = $story->story;
-$value = Str::limit($value, $limit = 300, $end = '......');
+
 echo $value;
 
 ?></a></p>
-                <div class="read"><a class="active" href="{{route('readmore',$story->id)}}">Read More<span
-                            class="glyphicon glyphicon-chevron-right"></span></a></div>
+                <div class="read"><a class="active" href="{{ route('dashboard') }}"><span class="glyphicon glyphicon-chevron-left"></span> Back To Dashboard</a></div>
                 <br>
+
+                
             </div>
         </div>
     </div>
-    @endforeach
+
 </div>
-
-
 
 <div class="sidebar clear">
 
@@ -130,8 +102,8 @@ echo $value;
 
 
 
-</div>
 
+</div>
 
 
 @endsection

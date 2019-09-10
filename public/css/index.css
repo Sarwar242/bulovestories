@@ -8,6 +8,27 @@
     padding: 2px;
     
 }
+.btnt {
+    display: inline-block;
+    margin-bottom: 4px;
+    padding-right: 8px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 36px;
+}
 .status{
     color:gray;
 }
