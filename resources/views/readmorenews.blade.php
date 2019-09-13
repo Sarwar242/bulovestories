@@ -52,9 +52,10 @@ notactive
         </div>
 
         <div class="contents">
-            <h2><a href="">Title : {!! $story->title !!}</a><span>&nbsp;&nbsp;
-
-                    <button class=" btnt btn-primary glyphicon glyphicon-heart-empty"></button></span></h2>
+            <div style="display:flex">
+                <h2><a href="">Title : {!! $story->title !!}</a>&nbsp;</h2>
+                <love-button></love-button>
+            </div>
             <div class="para">
                 <p class="paraa"> <a href="#"> <?php
 $value = $story->story;

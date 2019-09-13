@@ -17,7 +17,7 @@ class StoryController extends Controller
         $Story = new Story;
         $Story->user_id = $id;
         $Story->title = $request->title;
-        $Story->rating = 0;
+        $Story->loves = 0;
         $Story->story = $request->story;
         $Story->save();
         return redirect()->route('index');
@@ -60,6 +60,5 @@ class StoryController extends Controller
         return redirect()->route('dashboard');
 
     }
-
 
 }

@@ -18,6 +18,7 @@ class CreateRatingsTable extends Migration
             $table->unsignedInteger('user_id');
             $table->unsignedInteger('story_id');
             $table->timestamps();
+            $table->index('story_id');
         });
     }
 

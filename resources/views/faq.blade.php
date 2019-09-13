@@ -26,4 +26,7 @@ notactive
 @section('content')
 <br><br>
 <h1>FAQ Page</h1>
+<div>
+    <followbutton></followbutton>
+</div>
 @endsection

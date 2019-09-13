@@ -69,3 +69,7 @@ Route::group(['prefix' => '/admin'], function () {
         ->name('admin.password.reset');
 
 });
+
+// Follow Functionalities
+
+Route::post('follow/{userId}', 'FollowsController@store');

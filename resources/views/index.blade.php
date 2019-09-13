@@ -35,8 +35,7 @@ notactive
     <div class="slidersection">
         <h2>Campus Life</h2>
         <p>University of Barishal</p>
-        <link rel="stylesheet" href="{{asset('ism/css/my-slider.css')}}" />
-        <script src="{{asset('ism/js/ism-2.2.min.js')}}"></script>
+
 
         <div class="ism-slider" data-transition_type="fade" data-play_type="loop" data-interval="3000"
             data-image_fx="zoomrotate" data-radio_type="thumbnail" id="my-slider">
@@ -99,16 +98,19 @@ notactive
                 <div class="name">
                     <h2><a href="">{{ $story->user->name }}</a></h2>
                 </div>
-                <div class="following">
-                    <p>Followers <span class="badge"> 300 </span>&nbsp; <span>
-                            <a href="#">+Follow</a></span></p>
+                <div class="following" style="display:flex;
+">
+                    <p class="mr-5">Followers <span class="badge"> 300 </span>&nbsp;
+                    </p>
+                    <followbutton user-id="{{$story->user->id}}"></followbutton>
                 </div>
             </div>
 
         </div>
 
         <div class="contents">
-            <h2><a href="{{route('readmore',$story->id)}}"> {!! $story->title !!}</a><span style="font-size: 16px;color:grey;">&nbsp;&nbsp;100 People Love this story</span></h2>
+            <h2><a href="{{route('readmore',$story->id)}}"> {!! $story->title !!}</a><span
+                    style="font-size: 16px;color:grey;">&nbsp;&nbsp;100 People Love this story</span></h2>
             <div class="para">
                 <p class="paraa"> <a href="#"> <?php
 $value = $story->story;
@@ -164,6 +166,7 @@ echo $value;
 
 
 </div>
+
 
 
 @endsection
