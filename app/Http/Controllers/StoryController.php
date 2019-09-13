@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class StoryController extends Controller
 {
-    public function store(Request $request, $id)
+    public function storestory(Request $request, $id)
     {
         $this->validate($request, [
             'title' => 'required',

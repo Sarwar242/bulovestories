@@ -30,10 +30,12 @@ notactive
                 <div class="name">
                     <h2><a href="">{{ $story->user->name }}</a></h2>
                 </div>
+                
                 <div class="following">
                     <p><a class="btn btn-primary" href="">Approve</a> &nbsp; <span>
                             <a class="btn btn-danger" href="#">Delete</a></span></p>
                 </div>
+            
             </div>
 
         </div>
