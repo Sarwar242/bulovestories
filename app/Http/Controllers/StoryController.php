@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class StoryController extends Controller
 {
-    public function store(Request $request, $id)
+    public function storestory(Request $request, $id)
     {
         $this->validate($request, [
             'title' => 'required',
@@ -17,7 +17,7 @@ class StoryController extends Controller
         $Story = new Story;
         $Story->user_id = $id;
         $Story->title = $request->title;
-        $Story->rating = 0;
+        $Story->loves = 0;
         $Story->story = $request->story;
         $Story->save();
         return redirect()->route('index');
