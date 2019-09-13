@@ -71,6 +71,7 @@ Route::group(['prefix' => '/admin'], function () {
 
 });
 
-// Follow Functionalities
+//React & Follow Functionalities
 
-Route::post('follow/{userId}', 'FollowsController@store');
+Route::post('love/{storyId}', 'ReactsController@store');
+// Route::post('follow/{userId}', 'FollowsController@store');

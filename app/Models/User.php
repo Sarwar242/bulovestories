@@ -41,4 +41,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Models\Story::class);
     }
+
+    public function loves()
+    {
+        return $this->belongsTo(Models\Story::class);
+    }
+
 }

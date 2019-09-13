@@ -98,11 +98,10 @@ notactive
                 <div class="name">
                     <h2><a href="">{{ $story->user->name }}</a></h2>
                 </div>
-                <div class="following" style="display:flex;
-">
+                <div class="following" style="display:flex;">
                     <p class="mr-5">Followers <span class="badge"> 300 </span>&nbsp;
                     </p>
-                    <followbutton user-id="{{$story->user->id}}"></followbutton>
+
                 </div>
             </div>
 

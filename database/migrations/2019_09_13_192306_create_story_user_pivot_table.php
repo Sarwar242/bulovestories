@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateRatingsTable extends Migration
+class CreateStoryUserPivotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateRatingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ratings', function (Blueprint $table) {
+        Schema::create('story_user', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('story_id');
+            $table->unsignedBigInteger('story_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
-            $table->index('story_id');
         });
     }
 
@@ -29,6 +28,6 @@ class CreateRatingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ratings');
+        Schema::dropIfExists('story_user');
     }
 }

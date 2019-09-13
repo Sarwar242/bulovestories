@@ -54,7 +54,7 @@ notactive
         <div class="contents">
             <div style="display:flex">
                 <h2><a href="">Title : {!! $story->title !!}</a>&nbsp;</h2>
-                <love-button></love-button>
+                <love-button story-id="{{ $story->id}} "></love-button>
             </div>
             <div class="para">
                 <p class="paraa"> <a href="#"> <?php

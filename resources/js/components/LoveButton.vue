@@ -1,19 +1,19 @@
 <template>
   <div>
-    <button @click="loveStory" class="btnt btn-primary glyphicon glyphicon-heart-empty"></button>
+    <button class="btn btn-primary glyphicon glyphicon-heart-empty" @click="loveStory"></button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["userId"],
+  props: ["storyId"],
 
   mounted() {
     console.log("Component mounted.");
   },
   methods: {
     loveStory() {
-      axios.post("love/" + this.storyId).then(response => {
+      axios.post("/love/" + this.storyId).then(response => {
         alert(response.data);
       });
     }
@@ -23,6 +23,6 @@ export default {
 
 <style>
 .ml {
-  margin: 10px;
+  margin-right: 10px;
 }
 </style>
