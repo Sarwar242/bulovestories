@@ -1851,8 +1851,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     loveStory: function loveStory() {
-      axios.post("/love/" + this.storyId).then(function (response) {
-        alert(response.data);
+      axios.post("love/" + this.storyId).then(function (response) {
+        console.log(response);
       });
     }
   }

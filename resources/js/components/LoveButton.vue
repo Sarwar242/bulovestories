@@ -13,8 +13,8 @@ export default {
   },
   methods: {
     loveStory() {
-      axios.post("/love/" + this.storyId).then(response => {
-        alert(response.data);
+      axios.post("love/" + this.storyId).then(response => {
+        console.log(response);
       });
     }
   }

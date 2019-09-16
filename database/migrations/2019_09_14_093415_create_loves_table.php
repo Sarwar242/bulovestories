@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStoryUserPivotTable extends Migration
+class CreateLovesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateStoryUserPivotTable extends Migration
      */
     public function up()
     {
-        Schema::create('story_user', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->unsignedBigInteger('story_id');
+        Schema::create('loves', function (Blueprint $table) {
+
             $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('story_id');
+            $table->foreign('story_id')->references('id')->on('stories');
+            $table->primary(['user_id', 'story_id']);
             $table->timestamps();
         });
     }
@@ -28,6 +31,6 @@ class CreateStoryUserPivotTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('story_user');
+        Schema::dropIfExists('loves');
     }
 }

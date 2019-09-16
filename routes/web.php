@@ -46,6 +46,15 @@ Route::group(['prefix' => '/admin'], function () {
     Route::get('/confessions', 'Backend\AdminsController@confessionpage')->name('confessionpage');
     Route::get('/admins', 'Backend\AdminsController@admins')->name('admins');
     Route::get('/members', 'Backend\AdminsController@members')->name('members');
+    Route::get('/inactivemembers', 'Backend\AdminsController@inactivemembers')->name('inactivemembers');
+    Route::get('/review', 'Backend\AdminsController@review')->name('review');
+    Route::get('/reviewed', 'Backend\AdminsController@reviewed')->name('reviewed');
+    Route::get('/fullstory/{id}', 'Backend\AdminsController@fullstory')
+        ->name('admin.fullstory');
+    Route::get('/fullstoryreviewed/{id}', 'Backend\AdminsController@fullstoryreviewed')
+        ->name('admin.fullstoryreviewed');
+    Route::post('/fullstory/approve/{id}', 'Backend\AdminsController@storyapprove')
+        ->name('admin.story.approve');
 
     // Admin Login
     Route::get('/login', 'Auth\Admin\LoginController@showLoginForm')
@@ -73,5 +82,7 @@ Route::group(['prefix' => '/admin'], function () {
 
 //React & Follow Functionalities
 
-Route::post('love/{storyId}', 'ReactsController@store');
+Route::post('love/{story_id}', 'ReactsController@store');
 // Route::post('follow/{userId}', 'FollowsController@store');
+
+Route::post('ajaxRequest', 'ReactsController@ajaxRequest')->name('ajaxRequest');

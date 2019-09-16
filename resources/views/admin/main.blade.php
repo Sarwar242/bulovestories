@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/footer.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/index.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/tabletab.css')}}">
 
     <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
 
@@ -27,9 +28,6 @@
 </head>
 
 <body>
-
-
-
 
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
@@ -57,8 +55,8 @@
                     <li role="presentation" class=" @yield('act3','active')"><a href="{{route('admins')}}">Admins</a>
                     </li>
                     <li class=" @yield('act4','active') "><a href="{{route('members')}}">Members</a></li>
-
-
+                    <li class=" @yield('act5','active') "><a href="{{route('reviewed')}}">Reviewed Stories</a></li>
+                    <li class=" @yield('act6','active') "><a href="{{route('review')}}">Under Review</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">

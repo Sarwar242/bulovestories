@@ -2,53 +2,52 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Story;
+use App\Models\User;
+use Auth;
 use Illuminate\Http\Request;
 
 class ReactsController extends Controller
 {
+
+    // public function store(Request $request, $story_id)
+    // {
+    //     dd($story_id);
+
+    //     $loveCheck = Love::where([
+    //         'user_id' => Auth::id(),
+    //         'story_id' => $story_id])->first();
+
+    //     if ($loveCheck) {
+    //         Love::where([
+    //             'user_id' => Auth::id(),
+
+    //             'story_id' => $story_id])->delete();
+    //         return 'deleted';
+    //     } else {
+    //         $love = new Love;
+
+    //         $love->user_id = Auth::id();
+    //         $love->story_id = $story_id;
+    //         $love->save();
+    //         return 'success';
+
+    //     }
+
+    // }
     /**
-     * Display a listing of the resource.
+     * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store($id)
+    public function ajaxRequest(Request $request)
     {
 
-        return $id;
-    }
+        $story = Story::find($request->id);
+        $response = auth()->user()->toggleLike($story);
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return response()->json(['success' => $response]);
     }
-
     /**
      * Show the form for editing the specified resource.
      *

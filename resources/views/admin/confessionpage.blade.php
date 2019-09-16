@@ -12,8 +12,12 @@ notactive
 @section('act4')
 notactive
 @endsection
-
-
+@section('act5')
+notactive
+@endsection
+@section('act6')
+notactive
+@endsection
 
 @section('content')
 <br><br>

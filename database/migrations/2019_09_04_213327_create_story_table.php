@@ -18,7 +18,8 @@ class CreateStoryTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('title');
             $table->text('story');
-            $table->unsignedInteger('loves')->default(0);
+            $table->tinyInteger('review')->default(0)->nullable()
+                ->comment('0=Under Review| 1= Reviewed');
             $table->timestamps();
         });
     }

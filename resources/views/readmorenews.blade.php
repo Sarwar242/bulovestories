@@ -27,9 +27,9 @@ notactive
 <br><br><br><br>
 
 
+<link rel="stylesheet" type="text/css" href="{{asset('css/like.css')}}">
 
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
 <div class="posts clear">
@@ -54,7 +54,7 @@ notactive
         <div class="contents">
             <div style="display:flex">
                 <h2><a href="">Title : {!! $story->title !!}</a>&nbsp;</h2>
-                <love-button story-id="{{ $story->id}} "></love-button>
+
             </div>
             <div class="para">
                 <p class="paraa"> <a href="#"> <?php
@@ -107,6 +107,45 @@ echo $value;
 
 </div>
 
+<script type="text/javascript">
+$(document).ready(function() {
 
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $('i.glyphicon-thumbs-up, i.glyphicon-thumbs-down').click(function() {
+        var id = $(this).parents(".contents").data('id');
+        var c = $('#' + this.id + '-bs3').html();
+        var cObjId = this.id;
+        var cObj = $(this);
+
+        $.ajax({
+            type: 'POST',
+            url: '/ajaxRequest',
+            data: {
+                id: id
+            },
+            success: function(data) {
+                if (jQuery.isEmptyObject(data.success.attached)) {
+                    $('#' + cObjId + '-bs3').html(parseInt(c) - 1);
+                    $(cObj).removeClass("like-story");
+                } else {
+                    $('#' + cObjId + '-bs3').html(parseInt(c) + 1);
+                    $(cObj).addClass("like-story");
+                }
+            }
+        });
+
+    });
+
+    $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+});
+</script>
 
 @endsection

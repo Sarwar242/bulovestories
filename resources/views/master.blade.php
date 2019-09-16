@@ -12,20 +12,14 @@
     <link rel="icon" href="{{asset('images/bulovestorieslogo.png')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/footer.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/index.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/tabletab.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
     <link rel="stylesheet" href="{{asset('ism/css/my-slider.css')}}" />
+
+    <!-- Scripts -->
     <script src="{{asset('ism/js/ism-2.2.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/jquery.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('js/app.js') }}" defer></script>
-
-
-
-
-
-
-
-
-
+    <script type="text/javascript" src="{{asset('bootstrap/js/bootstrap.min.js')}} "></script>
 </head>
 
 <body>
@@ -119,7 +113,7 @@
 
     </footer>
 
-    <script type="text/javascript" src="{{asset('bootstrap/js/bootstrap.min.js')}} "></script>
+
 
 </body>
 

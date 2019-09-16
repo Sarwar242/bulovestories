@@ -1,7 +1,7 @@
 @extends('admin/main')
 
 @section('act')
-active
+notactive
 @endsection
 @section('act2')
 notactive
@@ -13,20 +13,20 @@ notactive
 notactive
 @endsection
 @section('act5')
-notactive
+active
 @endsection
 @section('act6')
 notactive
 @endsection
 
-
-
 @section('content')
-<br><br><br>
-<div class="posts clear">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/adminhome.css')}}">
+<br><br><br><br>
 
-    @foreach ($stories as $story)
+
+<link rel="stylesheet" type="text/css" href="{{asset('css/like.css')}}">
+
+<div class="posts clear">
+
     <div class="stories">
         <div class="profilesection">
             <div class="image clear">
@@ -36,18 +36,13 @@ notactive
                 <div class="name">
                     <h2><a href="">{{ $story->user->name }}</a></h2>
                 </div>
-
-                <div class="following">
-                    <p><a class="btn btn-primary" href="">Approve</a> &nbsp; <span>
-                            <a class="btn btn-danger" href="#">Delete</a></span></p>
-                </div>
-
             </div>
 
         </div>
 
         <div class="contents">
-            <h2><a href=""> {!! $story->title !!}</a></h2>
+
+            <h2><a href="">Title : {!! $story->title !!}</a>&nbsp;</h2>
             <div class="para">
                 <p class="paraa"> <a href="#"> <?php
 $value = $story->story;
@@ -55,11 +50,13 @@ $value = $story->story;
 echo $value;
 
 ?></a></p>
-
+                <div class="read"><a class="active" href="{{ route('reviewed') }}"><span
+                            class="glyphicon glyphicon-chevron-left"></span> Back To Reviewed Page</a></div>
                 <br>
             </div>
         </div>
     </div>
-    @endforeach
+
 </div>
+
 @endsection

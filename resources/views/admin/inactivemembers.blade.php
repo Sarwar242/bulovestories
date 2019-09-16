@@ -1,4 +1,5 @@
 @extends('admin/main')
+
 @section('act')
 notactive
 @endsection
@@ -6,10 +7,10 @@ notactive
 notactive
 @endsection
 @section('act3')
-notactive
+active
 @endsection
 @section('act4')
-active
+notactive
 @endsection
 @section('act5')
 notactive
@@ -17,21 +18,24 @@ notactive
 @section('act6')
 notactive
 @endsection
+
+
 @section('content')
 <br><br><br>
 <div class="clearfix"></div>
 <div style="display:flex">
-    <a href="{{route('members')}}" class="active">Active Members</a>&nbsp&nbsp&nbsp
-    <a href="{{route('inactivemembers')}}">Inactive Members</a>
+    <a href="{{route('inactivemembers')}}" class="active">Inactive Members</a>&nbsp&nbsp&nbsp
+    <a href="{{route('members')}}">Active Members</a>
 </div>
 
 <div class="row">
+
+
     <div class="col-md-12">
-        <h4>Active Members</h4>
+        <h4>Inactive Members</h4>
         <div class="table-responsive">
             <table id="mytable" class="table table-bordred table-striped">
                 <thead>
-
                     <th>Name</th>
                     <th>Email</th>
                     <th>Profession</th>
@@ -62,7 +66,6 @@ notactive
                     @endforeach
                 </tbody>
             </table>
-
             <div class="clearfix"></div>
         </div>
 

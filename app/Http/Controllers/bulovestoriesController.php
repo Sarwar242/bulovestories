@@ -10,7 +10,7 @@ class bulovestoriesController extends Controller
 {
     public function index()
     {
-        $story = Story::orderBY('updated_at', 'desc')->get();
+        $story = Story::orderBY('updated_at', 'desc')->where('review', 1)->get();
 
         return view('index')->with('stories', $story);
     }

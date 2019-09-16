@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Overtrue\LaravelFollow\Traits\CanLike;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use CanLike, Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -39,12 +40,17 @@ class User extends Authenticatable
 
     public function story()
     {
-        return $this->hasMany(Models\Story::class);
+        return $this->hasMany(Story::class);
     }
 
     public function loves()
     {
-        return $this->belongsTo(Models\Story::class);
+        return $this->belongsTo(Story::class);
+    }
+
+    public function likes()
+    {
+        return $this->belongsToMany(Story::class, 'loves', 'user_id', 'story_id');
     }
 
 }

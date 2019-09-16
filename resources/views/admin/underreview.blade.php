@@ -1,7 +1,7 @@
 @extends('admin/main')
 
 @section('act')
-active
+notactive
 @endsection
 @section('act2')
 notactive
@@ -16,16 +16,14 @@ notactive
 notactive
 @endsection
 @section('act6')
-notactive
+active
 @endsection
 
-
-
 @section('content')
-<br><br><br>
+<div class="clearfix"></div>
+<h1>Under Review Stories</h1>
 <div class="posts clear">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/adminhome.css')}}">
-
+    @if(!is_null($stories))
     @foreach ($stories as $story)
     <div class="stories">
         <div class="profilesection">
@@ -36,30 +34,30 @@ notactive
                 <div class="name">
                     <h2><a href="">{{ $story->user->name }}</a></h2>
                 </div>
-
-                <div class="following">
-                    <p><a class="btn btn-primary" href="">Approve</a> &nbsp; <span>
-                            <a class="btn btn-danger" href="#">Delete</a></span></p>
-                </div>
-
             </div>
 
         </div>
 
         <div class="contents">
-            <h2><a href=""> {!! $story->title !!}</a></h2>
+            <h2><a href="{{route('readmore',$story->id)}}"> {!! $story->title !!}</a></h2>
             <div class="para">
                 <p class="paraa"> <a href="#"> <?php
 $value = $story->story;
-
+$value = Str::limit($value, $limit = 300, $end = '......');
 echo $value;
 
 ?></a></p>
-
+                <div class="read"><a class="active" href="{{route('admin.fullstory',$story->id)}}">Read More
+                        <span class="glyphicon glyphicon-chevron-right"></span></a></div>
                 <br>
             </div>
         </div>
     </div>
     @endforeach
+    @else
+    <div class="contents">
+        <h2><a href="">Nothing to Show!!</a></h2>
+    </div>
+    @endif
 </div>
 @endsection
