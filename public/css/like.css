@@ -78,3 +78,50 @@ i.glyphicon-thumbs-down {
 .like-post{
   color: #e21309 !important;
 }
+
+
+/* Style buttons */
+.lovebtn {
+  border: none; /* Remove borders */
+  color: rgb(75, 69, 69); /* White text */
+  /* Some padding */
+  font-size: 22px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius:50%;
+  background-color:transparent;
+}
+
+/* Darker background on mouse-over */
+.lovebtn:hover {
+ color: rgb(231, 0, 0);
+}
+/* Style buttons */
+.lovebtn {
+  border: none; /* Remove borders */
+  color: rgb(75, 69, 69); /* White text */
+  /* Some padding */
+  font-size: 22px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius:50%;
+  background-color:transparent;
+}
+
+/* Darker background on mouse-over */
+.lovebtn:hover {
+ color: rgb(231, 0, 0);
+}
+
+.xlovebtn {
+  border: none; /* Remove borders */
+  color:  rgb(231, 0, 0); /* White text */
+  /* Some padding */
+  font-size: 22px; /* Set a font size */
+  cursor: pointer; /* Mouse pointer on hover */
+  border-radius:50%;
+  background-color:transparent;
+}
+
+/* Darker background on mouse-over */
+.xlovebtn:hover {
+ color:rgb(75, 69, 69);
+}

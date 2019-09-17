@@ -13,7 +13,7 @@ class CreateLovesTable extends Migration
      */
     public function up()
     {
-        Schema::create('loves', function (Blueprint $table) {
+        Schema::create('love', function (Blueprint $table) {
 
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
@@ -31,6 +31,6 @@ class CreateLovesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('loves');
+        Schema::dropIfExists('love');
     }
 }

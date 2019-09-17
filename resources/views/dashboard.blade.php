@@ -29,7 +29,7 @@ notactive
 <br><br>
 <div class="dashboard">
 
-<link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/dashboard.css')}}">
     <div class="cover">
         <img class="img-responsive" src="{{asset('images/cover.jpg')}}">
     </div>
@@ -69,9 +69,15 @@ notactive
                         <a class="btn-primary btndashboard" href="{{route('editstory',$story->id)}}">
                             Edit</a>
 
-                        <a class="btn-danger btndashboard" onclick="return confirm('Are you sure?')" href="{{route('deletestory',$story->id)}}">
+                        <a class="btn-danger btndashboard" onclick="return confirm('Are you sure?')"
+                            href="{{route('deletestory',$story->id)}}">
                             Delete</a><span class="status">&nbsp;&nbsp;
-                            Approved</a></span></p>
+                            @if($story->review===1)
+                            Approved
+                            @else
+                            UnderReview
+                            @endif
+                            </a></span></p>
                 </div>
             </div>
         </div>
@@ -107,8 +113,7 @@ echo $value;
         <div class="storyname">
             <h3><a href="{{route('sharestory')}}">Share your story</a> &nbsp; <span
                     class="glyphicon glyphicon-pencil"></span></h3>
-            <h3><a href="{{route('confessions')}}">Confessions</a> &nbsp; <span
-                    class="glyphicon glyphicon-heart-empty"></span></h3>
+
             <h3><a href="{{route('dashboard')}}">Dashboard</a> &nbsp; <span class="glyphicon glyphicon-user"></span>
             </h3>
         </div>

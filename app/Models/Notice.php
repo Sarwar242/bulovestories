@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UnderReview extends Model
+class Notice extends Model
 {
-     protected $fillable = [
-        'title', 'story',
+    protected $fillable = [
+        'title', 'details',
     ];
 
     public function user()

@@ -50,7 +50,7 @@ class User extends Authenticatable
 
     public function likes()
     {
-        return $this->belongsToMany(Story::class, 'loves', 'user_id', 'story_id');
+        return $this->belongsToMany(Story::class, 'user_id', 'story_id');
     }
 
 }

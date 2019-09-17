@@ -48,7 +48,7 @@
                                     class="sr-only">(current)</span></a></li>
                         <li class=" @yield('act2','active') "><a href="{{route('topstories')}}">Top Stories</a></li>
                         <li role="presentation" class=" @yield('act3','active')"><a
-                                href="{{route('confessions')}}">Confessions</a></li>
+                                href="{{route('notice')}}">Notices</a></li>
                         <li class=" @yield('act4','active') "><a href="{{route('sharestory')}}">Share Story</a></li>
                         <li class=" @yield('act5','active') "><a href="{{route('dashboard')}}">Dashboard</a></li>
                         <li class=" @yield('act6','active') "><a href="{{route('faq')}}">FAQ</a></li>

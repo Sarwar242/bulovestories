@@ -17,5 +17,3 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/newsfeed/{id}/like', 'API\ReactsController@postLike');
-Route::delete('/newsfeed/{id}/like', 'API\ReactsController@deleteLike');

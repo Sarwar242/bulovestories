@@ -53,7 +53,13 @@ class LoginController extends Controller
 
         if (Auth::guard('admin')->attempt(['email' => $request->email,
             'password' => $request->password])) {
+            $admin = Admin::where('email', '=', $request->email)->first();
+            $adminName = $admin->name;
+            $adminId = $admin->id;
+            session(['adminName' => $adminName, 'adminId' => $adminId]);
+
             return redirect()->intended(route('homeadmin'));
+
         } else {
             session()->flash('Sticky Error!', 'invalid login!');
             return back();
@@ -62,6 +68,8 @@ class LoginController extends Controller
     public function logout(Request $request)
     {
         $this->guard()->logout();
+        session()->forget(['adminName', 'adminId']);
+
         $request->session()->invalidate();
         return redirect()->route('admin.login');
     }

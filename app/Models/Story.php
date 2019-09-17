@@ -3,11 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Overtrue\LaravelFollow\Traits\CanBeLiked;
 
 class Story extends Model
 {
-    use CanBeLiked;
 
     protected $fillable = [
         'title', 'story',
@@ -17,12 +15,14 @@ class Story extends Model
     {
         return $this->belongsTo(User::class);
     }
-    public function lovers()
+    public function loved()
     {
-        return $this->belongsTo(User::class);
+        return $this->hasMany(Love::class);
     }
-    public function likes()
+    public function loves()
     {
-        return $this->belongsToMany(User::class, 'loves', 'story_id', 'user_id');
+        return $this->belongsToMany(User::class);
+
     }
+
 }

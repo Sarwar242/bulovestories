@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateStoryTable extends Migration
+class Notices extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class CreateStoryTable extends Migration
      */
     public function up()
     {
-        Schema::create('stories', function (Blueprint $table) {
+        Schema::create('notices', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('admin_id');
             $table->string('title');
-            $table->text('story');
-            $table->tinyInteger('review')->default(0)->nullable()
-                ->comment('0=Under Review| 1= Reviewed');
-            $table->unsignedBigInteger('loves')->default(0)->nullable();
-
+            $table->text('details');
             $table->timestamps();
         });
+
     }
 
     /**
@@ -33,6 +30,6 @@ class CreateStoryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('story');
+        //
     }
 }

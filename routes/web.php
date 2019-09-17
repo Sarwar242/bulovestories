@@ -15,22 +15,24 @@ Route::get('/topstories', 'bulovestoriesController@topstories')->name('topstorie
 
 Route::get('/faq', 'bulovestoriesController@faq')->name('faq');
 Route::get('/about', 'bulovestoriesController@about')->name('about');
-Route::get('/confessions', 'bulovestoriesController@confessions')->name('confessions');
+Route::get('/notice', 'bulovestoriesController@notices')->name('notice');
 
 Route::group(['middleware' => 'AuthenticateMiddleware'], function () {
     Route::get('/sharestory', 'bulovestoriesController@sharestory')->name('sharestory');
     Route::get('/dashboard', 'bulovestoriesController@dashboard')->name('dashboard');
+
+    //React & Follow Functionalities
+
+    Route::post('love/{story_id}', 'API\ReactsController@store')->name('story.love');
+
 });
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/token/{token}', 'auth\VerificationController2@verify')->name('user.verification');
 
 /* Functionalities */
 
-Route::post('/sharestory/{id}', 'underreviewController@store')->name('store');
-Route::post('/homeadmin/{id}', 'sharestoryController@storestory')->name('storestory');
+Route::post('/sharestory/{id}', 'StoryController@store')->name('store');
 Route::get('/readmore/{id}', 'StoryController@readmore')->name('readmore');
 Route::get('/newsfeed/{id}', 'StoryController@newsfeed')->name('newsfeed');
 Route::get('/editstory/{id}', 'StoryController@editstory')->name('editstory');
@@ -43,7 +45,9 @@ Route::post('/deletestory/{id}', 'StoryController@delete')->name('deletestory');
 
 Route::group(['prefix' => '/admin'], function () {
     Route::get('/', 'Backend\AdminsController@homeadmin')->name('homeadmin');
-    Route::get('/confessions', 'Backend\AdminsController@confessionpage')->name('confessionpage');
+    Route::get('/post', 'Backend\NoticeController@store')->name('admin.post');
+    Route::post('/post', 'Backend\NoticeController@insert')->name('admin.post.insert');
+
     Route::get('/admins', 'Backend\AdminsController@admins')->name('admins');
     Route::get('/members', 'Backend\AdminsController@members')->name('members');
     Route::get('/inactivemembers', 'Backend\AdminsController@inactivemembers')->name('inactivemembers');
@@ -80,9 +84,6 @@ Route::group(['prefix' => '/admin'], function () {
 
 });
 
-//React & Follow Functionalities
-
-Route::post('love/{story_id}', 'ReactsController@store');
 // Route::post('follow/{userId}', 'FollowsController@store');
 
 Route::post('ajaxRequest', 'ReactsController@ajaxRequest')->name('ajaxRequest');

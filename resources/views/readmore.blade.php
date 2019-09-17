@@ -53,7 +53,8 @@ notactive
 
         <div class="contents">
             <h2><a href="">Title : {!! $story->title !!}</a>
-                <span style="font-size: 16px;color:grey;">&nbsp;&nbsp;{!! $story->loves !!} People Love this story</span></h2>
+                <span style="font-size: 16px;color:grey;">&nbsp;&nbsp;{!! $story->loves !!} People Love this
+                    story</span></h2>
             <div class="para">
                 <p class="paraa"> <a href="#"> <?php
 $value = $story->story;
@@ -81,8 +82,7 @@ echo $value;
         <div class="storyname">
             <h3><a href="{{route('sharestory')}}">Share your story</a> &nbsp; <span
                     class="glyphicon glyphicon-pencil"></span></h3>
-            <h3><a href="{{route('confessions')}}">Confessions</a> &nbsp; <span
-                    class="glyphicon glyphicon-heart-empty"></span></h3>
+
             <h3><a href="{{route('dashboard')}}">Dashboard</a> &nbsp; <span class="glyphicon glyphicon-user"></span>
             </h3>
         </div>

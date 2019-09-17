@@ -51,7 +51,7 @@
                 <ul class="nav navbar-nav nav-tabs">
                     <li class=" @yield('act','active') "><a href="{{route('homeadmin')}}">Home <span
                                 class="sr-only">(current)</span></a></li>
-                    <li class=" @yield('act2','active') "><a href="{{route('confessionpage')}}">Confessions</a></li>
+                    <li class=" @yield('act2','active') "><a href="{{route('admin.post')}}">Post</a></li>
                     <li role="presentation" class=" @yield('act3','active')"><a href="{{route('admins')}}">Admins</a>
                     </li>
                     <li class=" @yield('act4','active') "><a href="{{route('members')}}">Members</a></li>
@@ -64,7 +64,7 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            Sarwar <span class="caret"></span>
+                            {{session('adminName')}} <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="{{ route('admin.logout') }}" onclick="event.preventDefault();

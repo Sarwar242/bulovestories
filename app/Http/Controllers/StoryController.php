@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Love;
 use App\Models\Story;
+use Auth;
 use Illuminate\Http\Request;
 
 class StoryController extends Controller
 {
-    public function storestory(Request $request, $id)
+    public function store(Request $request, $id)
     {
         $this->validate($request, [
             'title' => 'required',
@@ -17,21 +19,30 @@ class StoryController extends Controller
         $Story = new Story;
         $Story->user_id = $id;
         $Story->title = $request->title;
-        $Story->loves = 0;
+        $Story->review = 0;
         $Story->story = $request->story;
         $Story->save();
-        return redirect()->route('index');
+        return redirect()->route('dashboard');
     }
 
     public function readmore($id)
     {
+
         $story = Story::find($id);
         return view('readmore')->with('story', $story);
     }
     public function newsfeed($id)
     {
+
         $story = Story::find($id);
-        return view('readmorenews')->with('story', $story);
+        $love = Love::where('story_id', $id)
+            ->where('user_id', Auth::user()->id)->first();
+        if ($love) {
+            $loveck = 1;
+        } else {
+            $loveck = 0;
+        }
+        return view('readmorenews')->with('story', $story)->with('lc', $loveck);
     }
     public function editstory($id)
     {

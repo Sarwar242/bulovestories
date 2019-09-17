@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Notice;
 use App\Models\Story;
 use Auth;
 use Illuminate\Support\Facades\DB;
@@ -10,7 +11,7 @@ class bulovestoriesController extends Controller
 {
     public function index()
     {
-        $story = Story::orderBY('updated_at', 'desc')->where('review', 1)->get();
+        $story = Story::orderBY('created_at', 'desc')->where('review', 1)->get();
 
         return view('index')->with('stories', $story);
     }
@@ -44,6 +45,12 @@ class bulovestoriesController extends Controller
     public function about()
     {
         return view('about');
+    }
+
+    public function notices()
+    {
+        $notice = Notice::all();
+        return view('notice')->with("notices", $notice);
     }
 
 }
