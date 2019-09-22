@@ -54,20 +54,21 @@ class LoginController extends Controller
                     'password' => $request->password])) {
                     return redirect()->intended(route('index'));
                 } else {
-                    session()->flash('Email or Password does not match!, try again!');
+                    session()->flash('failed', 'Wrong password!, try again!');
                     return redirect()->route('login');
                 }
             } else {
-                session()->flash('Confirm your email first!');
+                session()->flash('failed', 'Confirm your email first! We have sent you an email for confirmation again!');
                 $user->notify(new VerifyRegistration($user));
 
                 return redirect()->route('login');
             }
 
         } else {
-            session()->flash('Please Register First!!');
+            session()->flash('failed', 'Please Register First!!');
 
-            return redirect()->route('register');
+            return redirect()->route('login');
+
         }
 
     }

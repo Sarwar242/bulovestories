@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'BuCampusLife') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -20,16 +20,24 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
+<style>
+.logopng {
+    height: 59px;
+    width: 92px;
+    padding-top: 3px;
+    padding-left: 5px;
+    margin-top: 2px;
+}
+</style>
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-secondary shadow-sm">
             <div class="container">
 
 
                 <a class="navbar-brand" href="{{ url('/') }}">
-
-                    {{ config('app.name', 'Laravel') }}
+                    <img alt="Brand" class="logopng" src="{{asset('images/bulovestorieslogo.png')}}">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
